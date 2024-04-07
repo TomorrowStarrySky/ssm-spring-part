@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <!-- 引用与被引用的组件，需要全部在ioc容器-->
+
+    <!-- 1.单个构造参数注入-->
+    <bean id="userDao" class="com.yuanzijun.ioc_02.UserDao" />
+
+    <bean id="userService" class="com.yuanzijun.ioc_02.UserService" >
+        <!-- di的配置 value直接值 ref引用其他的bean id-->
+        <constructor-arg ref="userDao"/>
+    </bean>
+
+
+    <!-- 2.多个构造参数-->
+    <bean id="userService1" class="com.yuanzijun.ioc_02.UserService">
+        <constructor-arg value="18"/>
+        <constructor-arg value="张山"/>
+        <constructor-arg ref="userDao"/>
+    </bean>
+
+    <!-- 推荐方法（按照name属性来指定）-->
+    <bean id="userService2" class="com.yuanzijun.ioc_02.UserService">
+        <constructor-arg name="name" value="二狗子"/>
+        <constructor-arg name="age" value="30"/>
+        <constructor-arg name="userDao" ref="userDao"/>
+    </bean>
+
+    <!-- 3.触发setter方法注入-->
+    <bean id="movieFinder" class="com.yuanzijun.ioc_02.MovieFinder" />
+
+    <bean id="simpleMovieLister" class="com.yuanzijun.ioc_02.SimpleMovieLister">
+        <!-- name即setter方法对应-->
+        <property name="movieName" value="泰坦尼克号"/>
+        <property name="movieFinder" ref="movieFinder" />
+    </bean>
+</beans>

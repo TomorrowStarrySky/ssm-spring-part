@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <!--
+        生命周期
+        init-method
+        destroy-method
+    -->
+    <bean id="javaBean" class="com.yuanzijun.ioc_04.JavaBean" init-method="init" destroy-method="clear"/>
+
+    <!-- 默认Scope是单例-->
+    <bean id="javaBean2" class="com.yuanzijun.ioc_04.JavaBean2" scope="singleton"/>
+
+</beans>
