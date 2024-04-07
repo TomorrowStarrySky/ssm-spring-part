@@ -1,1 +1,2 @@
-springframework基于xml配置方式
+一、springframework基于xml配置方式
+二、基于注解的配置ioc容器方式
