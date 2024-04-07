@@ -1,0 +1,1 @@
+springframework基于xml配置方式
