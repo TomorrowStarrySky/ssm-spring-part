@@ -14,7 +14,7 @@ public class StudentController {
 
     public void findAll(){
         List<Student> all = studentService.queryAll();
-        System.out.println("all:" + all);
+        System.out.println(all);
     }
 
 }
