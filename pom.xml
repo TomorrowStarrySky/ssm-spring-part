@@ -11,6 +11,7 @@
         <module>spring-ioc-xml-01</module>
         <module>spring-ioc-xml-practice-part</module>
         <module>spring-ioc-annotation-03</module>
+        <module>spring-ioc-annotation-practice-05</module>
     </modules>
     <packaging>pom</packaging>
 
